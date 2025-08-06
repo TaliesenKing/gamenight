@@ -1,3 +1,9 @@
+# GAMENIGHT
+concept: 
+A website for friend groups to coordinate meeting up to play games, be they tabletop, board games or video games!
+
+
+
 # Flask React Project
 
 This is the starter for the Flask React project.
@@ -129,3 +135,7 @@ main, always keeping it up to date.
 
 [Render.com]: https://render.com/
 [Dashboard]: https://dashboard.render.com/
+
+
+
+
