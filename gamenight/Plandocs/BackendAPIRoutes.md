@@ -748,7 +748,7 @@ Updates an existing RSVP for a game night.
 
 * Request
   * Method: PUT
-  * Route path: /api/gamenights/:id/players/:player_id
+  * Route path: /api/gamenights/:id/players/:id
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -784,7 +784,7 @@ Deletes an existing RSVP for a game night.
 
 * Request
   * Method: DELETE
-  * Route path: /api/gamenights/:id/players/:player_id
+  * Route path: /api/gamenights/:id/players/:id
   * Body: none
 
 * Successful Response
