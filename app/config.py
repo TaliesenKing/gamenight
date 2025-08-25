@@ -1,5 +1,9 @@
 import os
 
+environment = os.environ.get("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+
+
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -11,3 +15,4 @@ class Config:
     # so the connection uri must be updated here (for production)
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///gamenight.db').replace('postgres://', 'postgresql://')
     SQLALCHEMY_ECHO = True
+    
