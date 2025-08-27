@@ -17,8 +17,11 @@ class User(db.Model, UserMixin):
 
 
     attendances = db.relationship('Attendee', back_populates='user')
+    sent_messages = db.relationship('Message', foreign_keys='Message.sender_id', back_populates='sender', cascade='all, delete-orphan')
+    received_messages = db.relationship('Message', foreign_keys='Message.recipient_id', back_populates='recipient', cascade='all, delete-orphan')
+    user_quests = db.relationship('UserQuest', back_populates='user', cascade='all, delete-orphan')
 
-    
+
     @property
     def password(self):
         return self.hashed_password

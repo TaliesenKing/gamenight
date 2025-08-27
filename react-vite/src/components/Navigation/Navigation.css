@@ -1,3 +1,131 @@
+/* Dark Fantasy Navigation Theme */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #2c2c44 0%, #1a1a2e 100%);
+  border-bottom: 3px solid #8b7355;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+nav ul li {
+  margin-right: 25px;
+}
+
+nav ul li:last-child {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+nav a {
+  color: #e0d5c7;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background: linear-gradient(135deg, rgba(139, 115, 85, 0.3) 0%, rgba(139, 115, 85, 0.1) 100%);
+  color: #d4af37;
+  border-color: #8b7355;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav a.active {
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4e4c1;
+  border-color: #cd853f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.messages-link {
+  position: relative;
+}
+
+.messages-link::before {
+  content: '📜';
+  margin-right: 8px;
+}
+
 .profile-dropdown {
   position: absolute;
+  right: 0;
+  top: 100%;
+  background: linear-gradient(135deg, #2c2c44 0%, #1a1a2e 100%);
+  border: 2px solid #8b7355;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: #e0d5c7;
+  text-align: left;
+  text-decoration: none;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background: linear-gradient(90deg, rgba(139, 115, 85, 0.3) 0%, rgba(139, 115, 85, 0.1) 100%);
+  color: #d4af37;
+}
+
+/* New Message Button Styling */
+.new-message-button {
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+  color: #f4e4c1;
+  border: 2px solid #cd853f;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.new-message-button:hover {
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.new-message-button::before {
+  content: '⚔️';
+  margin-right: 8px;
+}
+
+.quests-link {
+  color: #ffd700 !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.quests-link:hover {
+  color: #ffed4a !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
 }
