@@ -1,0 +1,141 @@
+/* Profile Button Dark Fantasy Styling */
+.profile-button-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-button {
+  background: linear-gradient(135deg, #8b4513, #5d3010);
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  color: #d4af37;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+}
+
+.profile-button:hover {
+  background: linear-gradient(135deg, #a0522d, #6b3410);
+  border-color: #ffd700;
+  color: #ffd700;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+}
+
+.profile-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #2c1810, #3d2317);
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  min-width: 200px;
+  padding: 8px 0;
+  list-style: none;
+  z-index: 10002;
+  animation: dropdownAppear 0.2s ease-out;
+}
+
+@keyframes dropdownAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-dropdown li {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.profile-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.user-info {
+  display: block;
+  padding: 12px 16px;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.user-email {
+  display: block;
+  padding: 8px 16px;
+  color: #b8860b;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.logout-button {
+  width: 100%;
+  background: linear-gradient(135deg, #8b0000, #5d0000);
+  border: none;
+  color: #d4af37;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #a52a2a, #700000);
+  color: #ffd700;
+}
+
+/* Open Modal Menu Item Styling */
+.profile-dropdown .modal-menu-item {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #d4af37;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-align: left;
+  display: block;
+}
+
+.profile-dropdown .modal-menu-item:hover {
+  background: linear-gradient(135deg, #5d3010, #3d2010);
+  color: #ffd700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-dropdown {
+    right: -8px;
+    min-width: 180px;
+  }
+  
+  .profile-button {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}

@@ -21,14 +21,12 @@ function AuthPromptModal({ action = "continue" }) {
           buttonText="🏰 Login"
           modalComponent={<LoginModal />}
           className="auth-btn login-btn"
-          onModalClose={closeModal}
         />
         
         <OpenModalButton
           buttonText="📜 Sign Up"
           modalComponent={<SignupModal />}
           className="auth-btn signup-btn"
-          onModalClose={closeModal}
         />
       </div>
       
