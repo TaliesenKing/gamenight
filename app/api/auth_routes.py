@@ -23,19 +23,38 @@ def login():
     """
     Logs a user in
     """
+    print(f"Login attempt started. Request data: {request.get_json()}")
+    print(f"Request cookies: {request.cookies}")
+    
     form = LoginForm()
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
-    form['csrf_token'].data = request.cookies['csrf_token']
+    csrf_token = request.cookies.get('csrf_token')
+    print(f"CSRF token from cookie: {csrf_token}")
+    form['csrf_token'].data = csrf_token
+    
+    print(f"Form data before validation: {form.data}")
+    print(f"Form validate_on_submit: {form.validate_on_submit()}")
+    
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.email == form.data['email']).first()
-        login_user(user)
-        return user.to_dict()
+        if user:
+            print(f"User found: {user.username}")
+            login_user(user)
+            db.session.commit()  # Explicitly commit the session
+            user_dict = user.to_dict()
+            print(f"Returning user data: {user_dict}")
+            return user_dict
+        else:
+            print("User not found")
+            return {'errors': {'email': 'User not found'}}, 401
+    
+    print(f"Form validation failed. Errors: {form.errors}")
     return form.errors, 401
 
 
-@auth_routes.route('/logout')
+@auth_routes.route('/logout', methods=['POST'])
 def logout():
     """
     Logs a user out

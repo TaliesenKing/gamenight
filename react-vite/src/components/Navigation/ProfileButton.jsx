@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaUserCircle } from 'react-icons/fa';
 import { thunkLogout } from "../../redux/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import LoginModal from "../LoginModal";
+import SignupModal from "../SignupModal";
 import './ProfileButton.css';
 
 function ProfileButton() {
@@ -57,7 +57,7 @@ function ProfileButton() {
               </li>
               <li>
                 <button onClick={logout} className="logout-button">
-                  Return to Tavern
+                  Leave the Tavern
                 </button>
               </li>
             </>
@@ -66,12 +66,12 @@ function ProfileButton() {
               <OpenModalMenuItem
                 itemText="🏰 Log In"
                 onItemClick={closeMenu}
-                modalComponent={<LoginFormModal />}
+                modalComponent={<LoginModal />}
               />
               <OpenModalMenuItem
                 itemText="📜 Sign Up"
                 onItemClick={closeMenu}
-                modalComponent={<SignupFormModal />}
+                modalComponent={<SignupModal />}
               />
             </>
           )}

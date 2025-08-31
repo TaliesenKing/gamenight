@@ -65,11 +65,15 @@
 .profile-dropdown li {
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: none;
 }
 
-.profile-dropdown li:last-child {
-  border-bottom: none;
+.profile-dropdown li:has(.user-info) {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.profile-dropdown li:has(.user-email) {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .user-info {
@@ -108,7 +112,7 @@
 }
 
 /* Open Modal Menu Item Styling */
-.profile-dropdown .modal-menu-item {
+.profile-dropdown li {
   width: 100%;
   background: none;
   border: none;
@@ -119,11 +123,33 @@
   font-size: 14px;
   text-align: left;
   display: block;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.profile-dropdown .modal-menu-item:hover {
+.profile-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown li:hover {
   background: linear-gradient(135deg, #5d3010, #3d2010);
   color: #ffd700;
+}
+
+/* Override padding and styling for special content items */
+.profile-dropdown li:has(.user-info),
+.profile-dropdown li:has(.user-email),
+.profile-dropdown li:has(.logout-button) {
+  padding: 0;
+  cursor: default;
+}
+
+.profile-dropdown li:has(.user-info):hover,
+.profile-dropdown li:has(.user-email):hover,
+.profile-dropdown li:has(.logout-button):hover {
+  background: none;
+  color: inherit;
 }
 
 /* Responsive adjustments */
