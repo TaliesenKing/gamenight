@@ -1,6 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from datetime import datetime
-from .attendee import Attendee
 
 class GameNight(db.Model):
     __tablename__ = 'game_nights'
