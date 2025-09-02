@@ -85,10 +85,11 @@ export default function gameNightsReducer(state = initialState, action) {
     case ADD_GAMENIGHT:
     case UPDATE_GAMENIGHT:
       return { ...state, [action.payload.id]: action.payload };
-    case REMOVE_GAMENIGHT:
-      const newState = { ...state };
-      delete newState[action.payload];
-      return newState;
+    case REMOVE_GAMENIGHT: {
+    const newState = { ...state };
+    delete newState[action.payload];
+    return newState;
+  }
     default:
       return state;
   }
