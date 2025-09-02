@@ -50,9 +50,13 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     
+    # Only set schema for PostgreSQL in production
     if environment == "production":
-        op.execute(f"ALTER TABLE quests SET SCHEMA {SCHEMA};")
-        op.execute(f"ALTER TABLE user_quests SET SCHEMA {SCHEMA};")
+        # Check if we're using PostgreSQL (not SQLite)
+        connection = op.get_bind()
+        if connection.dialect.name == 'postgresql':
+            op.execute(f"ALTER TABLE quests SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE user_quests SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 

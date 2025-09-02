@@ -32,9 +32,13 @@ def upgrade():
     sa.UniqueConstraint('username')
     )
 
+    # Only set schema for PostgreSQL in production
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
-    # ### end Alembic commands ###qqqqqqqqq
+        # Check if we're using PostgreSQL (not SQLite)
+        connection = op.get_bind()
+        if connection.dialect.name == 'postgresql':
+            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+    # ### end Alembic commands ###
 
 
 def downgrade():
