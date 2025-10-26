@@ -1,6 +1,17 @@
-# GAMENIGHT
+# Polycule
 concept: 
-A website for friend groups to coordinate meeting up to play games, be they tabletop, board games or video games!
+An app for people who are ethically non-monogamous to diagram and track their relationships and view the relation diagrams of their friends. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
