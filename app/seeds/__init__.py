@@ -1,6 +1,6 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
-from .gamenight import seed_game_nights, undo_game_nights
+from .relationship import seed_relationships, undo_relationships
 from .messages import seed_messages, undo_messages
 from .quests import seed_quests, undo_quests
 from app.models.db import db, environment, SCHEMA
@@ -22,10 +22,10 @@ def seed():
         undo_quests()
         undo_messages()
         undo_attendees()
-        undo_game_nights()
+        undo_relationships()
         undo_users()
     seed_users()
-    seed_game_nights()
+    seed_relationships()
     seed_attendees()
     seed_messages()
     seed_quests()
@@ -38,6 +38,6 @@ def undo():
     undo_quests()
     undo_messages()
     undo_attendees()
-    undo_game_nights()
+    undo_relationships()
     undo_users()
     # Add other undo functions here

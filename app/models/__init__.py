@@ -1,6 +1,6 @@
 from .db import db
 from .user import User
-from .game_night import GameNight
+from .relationship import Relationship
 from .attendee import Attendee
 from .message import Message
 from .quest import Quest, UserQuest

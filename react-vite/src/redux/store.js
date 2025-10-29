@@ -8,11 +8,13 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import messagesReducer from "./messages";
 import questsReducer from "./quests";
+import relationshipsReducer from "./relationships";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   messages: messagesReducer,
   quests: questsReducer,
+  relationships: relationshipsReducer,
 });
 
 let enhancer;

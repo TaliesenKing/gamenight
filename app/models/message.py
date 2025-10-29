@@ -12,10 +12,9 @@ class Message(db.Model):
     sender_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     recipient_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     content = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    read = db.Column(db.Boolean, default=False, nullable=False)
+    read = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    # Relationships
     sender = db.relationship('User', foreign_keys=[sender_id], back_populates='sent_messages')
     recipient = db.relationship('User', foreign_keys=[recipient_id], back_populates='received_messages')
 
@@ -25,16 +24,8 @@ class Message(db.Model):
             'sender_id': self.sender_id,
             'recipient_id': self.recipient_id,
             'content': self.content,
-            'created_at': self.created_at.isoformat(),
             'read': self.read,
-            'sender': {
-                'id': self.sender.id,
-                'username': self.sender.username
-            },
-            'recipient': {
-                'id': self.recipient.id,
-                'username': self.recipient.username
-            }
+            'created_at': self.created_at.isoformat() if self.created_at else None
         }
 
     def to_dict_minimal(self):
@@ -43,6 +34,6 @@ class Message(db.Model):
             'sender_id': self.sender_id,
             'recipient_id': self.recipient_id,
             'content': self.content,
-            'created_at': self.created_at.isoformat(),
-            'read': self.read
+            'read': self.read,
+            'created_at': self.created_at.isoformat() if self.created_at else None
         }

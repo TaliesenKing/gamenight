@@ -13,6 +13,6 @@ class Config:
     # (only 'postgresql') but heroku's postgres add-on automatically sets the
     # url in the hidden config vars to start with postgres.
     # so the connection uri must be updated here (for production)
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///gamenight.db').replace('postgres://', 'postgresql://')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///polycule.db').replace('postgres://', 'postgresql://')
     SQLALCHEMY_ECHO = True
     

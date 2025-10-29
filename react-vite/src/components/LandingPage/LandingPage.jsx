@@ -14,7 +14,7 @@ function LandingPage() {
     <div className="landing-page">
       <div className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">⚔️ Welcome to GameNight ⚔️</h1>
+          <h1 className="hero-title">💕 Welcome to Polycule 💕</h1>
           <p className="hero-subtitle">
             Gather your fellowship and embark on epic tabletop adventures
           </p>
